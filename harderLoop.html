@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charest="UTF-8">
+    <title>More complex Loop</title>
+  </head>
+  <body>
+
+      <h1>Check the console to see what's happening!<h1>
+
+    <script type="text/javascript">
+    
+    // create array
+    var myFarm = ["chickens", "cows", "pigs", "horses", "ostriches"]
+
+    // loop through each animal in array and console.log
+
+    for(var i = 0; i < myFarm.length; i++) {
+      console.log(myFarm[i]);
+    } ;
+
+    // check first letter of animals if "c" or "o" 
+    // alert "'Animal' starts with a "c" or "o"!"
+
+    for(var i = 0; i < myFarm.length; i++) {
+      if(myFarm[i][0] === "c") {
+        alert(myFarm[i] +  " starts with a 'c'!");
+      }
+      else if(myFarm[i][0] === "o") {
+        alert(myFarm[i] + " starts with an 'o'!")
+      }
+      else {
+        console.log(myFarm[i]);
+      }
+    };
+
+    </script>
+  </body>
+</html>
