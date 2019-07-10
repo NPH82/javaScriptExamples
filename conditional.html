@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Conditional Statements</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    const steak=confirm("Do you eat steak?");
+    const age=prompt("what is yor birth year?");
+
+    if(steak) {
+      document.write("Here's a Steak Sandwich!");
+    }
+    else if(steak===false) {
+      document.write("Here's a Tofu Stir-Fry!");
+    };
+
+    if(age > 1998) {
+      alert("No sake for you!");
+    }
+    else if(age < 1998) {
+      alert("Bottoms up!!")
+    }
+    else {
+      alert("Close enough. Have a Sake!!")
+    }
+    </script>
+  </body>
+</html>
