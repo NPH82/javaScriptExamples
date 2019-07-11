@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rock Papper Scissor</title> 
+  </head>
+  <body>
+    <h1>Rock, Paper, Scissor!!</h1>
+    <div id="game">
+      <p id="userGuess">You guessed: </p>
+      <hr>
+      <p id="computerGuess">The computer guessed: </p>
+      <hr>
+      <p id="result"></p>
+      
+      <p>Refresh the screen to play again</p>
+    </div>
+    <script type="text/javascript">
+      //game variables
+      var userGuess= prompt("Choose r, p, or s!");
+      var computerGuess = ["r", "p", "s"]; 
+      var randomNumber = Math.floor(Math.random() * Math.floor(computerGuess.length))
+      var result = document.querySelector('#result');
+      var showUserGuess = document.querySelector("#userGuess");
+      var showComputerGuess = document.querySelector("#computerGuess");
+
+      //setting random computer guess
+      computerGuess = computerGuess[randomNumber];
+  
+      //game logic
+      function startGame() {
+        if(userGuess === computerGuess) {
+          result.innerHTML = "You Tied!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if(userGuess === "r" && computerGuess === "s") {
+          result.innerHTML = "Hooray!! You Win!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if(userGuess === "r" && computerGuess === "p") {
+          result.innerHTML = "Bummer!, You Lost!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if(userGuess === "s" && computerGuess === "p") {
+          result.innerHTML = "Hooray!! You Win!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if(userGuess === "s" && computerGuess === "r") {
+          result.innerHTML = "Bummer!, You Lost!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if(userGuess === "p" && computerGuess === "r") {
+          result.innerHTML = "Hooray!! You Win!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if(userGuess === "p" && computerGuess === "s") {
+          result.innerHTML = "Bummer!, You Lost!!";
+          showComputerGuess.innerHTML = "Computer Guessed: " + computerGuess;
+          showUserGuess.innerHTML = "You Guessed: " + userGuess;
+        }
+        else if((userGuess !== "p") || (userGuess !=="r") || (userGuess !=="s")) {
+        userGuess = prompt("You didn't select a r, p, or s.  Try again.")
+        startGame();
+        }
+      }
+
+      startGame();
+
+    </script>
+  </body>
+</html>
