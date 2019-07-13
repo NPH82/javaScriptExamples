@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="us-en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Car Game</title>
+  </head>
+  <body>
+    <h1>The Car Game</h1>
+    <p>Press 'w' to drive to work</p>
+    <p>Press 'a' to drive around the world</p>
+    <p>Press 't' to get a tune-up</p>
+    <p>Press 'h' to honk the horn</p>
+
+    <script>
+      
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+      //reWriteStats function
+      function reWriteStats() {
+        console.log(car.make);
+        console.log(car.model);
+        console.log(car.color);
+        console.log(car.mileage);
+        console.log(car.isWorking);
+        console.log('--------------')
+      };
+
+      
+      // key assignments for methods
+      document.onkeyup = function(event) {
+
+        var action = event.keyCode;
+
+        if(action == 87) {
+          car.driveToWork();
+          reWriteStats();
+        }
+        else if(action == 65) {
+          car.driveAroundWorld();
+          reWriteStats();
+        }
+        else if(action == 84) {
+          car.getTuneUp();
+          reWriteStats();
+        }
+        else if(action == 72) {
+          car.honk();
+          reWriteStats();
+        };
+      };
+      
+
+
+    </script>
+  </body>
+</html>
