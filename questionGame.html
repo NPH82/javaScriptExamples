@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Question Game</title>
+  </head>
+  <body>
+    <h1>Question Game</h1>
+    <hr>
+    <p>Answer each question with a "t" for true, or an "f" for false.</p>
+
+    <p id="question"></p>
+
+  <script>
+    var tenQuestions = [
+      ["Is the sky blue?", true],
+    ];
+    var userGuess="";
+
+    function getUserAnswer() {
+      document.onupkey = function(event) {
+        var action = event.Keycode;
+
+        if(action = 84) {
+          userGuess = true;
+        }
+      }
+    }
+    function questionLogic() {
+      var question = document.querySelector("#question");
+      getUserAnswer();
+
+    for(var i = 0; i < tenQuestions.length; i++) {
+      question.innerHTML = tenQuestions[i][0];
+      console.log(userGuess);
+      console.log(tenQuestions[i][1])
+      if(userGuess === tenQuestions[i][1]) {
+        alert("Correct!!");
+        }
+      }
+    }
+
+    questionLogic();
+  </script>
+  </body>
+</html>
